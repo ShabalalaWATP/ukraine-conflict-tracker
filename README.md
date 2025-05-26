@@ -69,6 +69,7 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
 - Node.js (v16 or higher)
 - npm or yarn
 - API keys for NASA FIRMS and NewsAPI
+- An Azure account if setting up in the Cloud
 
 ### 🖥️ Local Installation
 
