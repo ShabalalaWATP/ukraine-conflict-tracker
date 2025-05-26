@@ -120,19 +120,47 @@ This application is deployed using **Azure Static Web Apps** with the following 
 
 ### 🚀 Deployment Steps
 
-1. Create an Azure Static Web App in the Azure Portal
-2. Connect it to your GitHub repository
-3. Configure build settings:
-   - **Build presets: React
-   - **App location:** `/`
-   - **API location:** `api`
-   - **Output location:** `dist`
-4. Configure API Keys in Azure
-   - **In Azure Portal → Your Static Web App → Configuration → Application settings**
-   - **Add These environmental variables = "NEWS_API_KEY - Your News API Key" "FIRMS_API_KEY - Your FIRMS API Key"
-5. 
-6. Azure automatically creates a GitHub Actions workflow
-7. Every push to the `main` branch triggers automatic deployment
+#### Step 1: Fork this repository
+   - **1. Go to [https:](https://github.com/ShabalalaWATP/ukraine-conflict-tracker/)
+   - **2. Click the fork button (top right corner)
+   - **3. Select you're own GitHub account as the destination
+   - **4. Wait for GitHub to create your copy
+#### Step 2: Create an Azure Static Web App 
+   - **1. Go to Azure Portal
+   - **2. Click "+ Create a resource"
+   - **3. Search for "Static Web App" → Click "Create"
+#### Step 3: Fill in the configuration steps:
+   - **1. Subscription: Your Azure subscription
+   - **2. Resource Group: Create new or select exisiting
+   - **3. Name: Choose a unique name (e.g., "your-ukraine-tracker")
+   - **4. Plan Type: Free
+   - **5. Region: Select closest to you
+   - **6. Source: GitHub
+   - **7. Click: "Sign in with GitHub" and authorise Azure
+#### Step 4: Configure build settings:
+   - **1. Organisation: Your GitHub username
+   - **2. Repository: ukraine-conflict-tracker (YOUR fork not mine)
+   - **3. Branch: main
+   - **4. Build preset: React
+   - **5. App location: /
+   - **6. Api location: api
+   - **7. Output location: dist
+   - **8. Click: "Review + create" → "Create"
+#### Step 5: Add API Keys to Azure:
+   - **1. Wait for deployment to complete (2 minutes odd)
+   - **2. Go to your new Static Web App in Azure Portal
+   - **3. Navigate to Settings → Environment variables
+   - **4. Click: Add application setting and add these exactly: 
+   - **5. NEWS_API_KEY = Your NewsAPIKey
+   - **6. FIRMS_API_KEY = Your NASA FIRMS API Key
+   - **7. Click: Save
+   - **8. Click: "Review + create" → "Create"
+#### Step 6: Verify Deployment
+   - **1. Go to your GitHub fork → Actions tab
+   - **2. You should see a workflow running (triggered by Azure)
+   - **3. Once it shows ✅ green checkmark, your app is live!
+   - **4. Find your URL in Azure Portal → Your Static Web App → Overview → URLv 
+   - **5. Visit your site: https://[your-app-name].azurestaticapps.net
 
 ---
 
