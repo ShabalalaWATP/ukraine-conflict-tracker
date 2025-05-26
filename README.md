@@ -102,7 +102,7 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 npm run build
 ```
 
-## 🌐 Azure Deployment
+### ☁️ Azure Deployment
 
 This application is deployed using **Azure Static Web Apps** with the following architecture:
 
