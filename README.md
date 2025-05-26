@@ -64,7 +64,7 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
 - npm or yarn
 - API keys for NASA FIRMS and NewsAPI
 
-### Installation
+### 🖥️ Local Installation
 
 1. **Clone the repository:**
 
