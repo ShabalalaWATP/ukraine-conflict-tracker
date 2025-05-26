@@ -8,8 +8,9 @@ A real-time web application that monitors and visualises potential conflict area
 
 ## 📸 Screenshots
 
-![Ukraine Conflict Tracker Dashboard](screenshots/dashboard.png)
-*Main dashboard showing fire detections and news feed*
+![alt text](image-2.png)
+![alt text](image-3.png)
+
 
 ## 🎯 Project Overview
 
