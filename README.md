@@ -101,79 +101,104 @@ Open [http://localhost:5173](http://localhost:5173) in your browser.
 npm run build
 ```
 
-🌐 Azure Deployment
-This application is deployed using Azure Static Web Apps with the following architecture:
+## 🌐 Azure Deployment
 
-Hosting: Azure Static Web Apps (Free tier)
-CDN: Azure Content Delivery Network for global distribution
-SSL: Automatic HTTPS certificate provisioning
-CI/CD: GitHub Actions workflow for automatic deployment on push
+This application is deployed using **Azure Static Web Apps** with the following architecture:
 
-Deployment Steps
+- **Hosting:** Azure Static Web Apps (Free tier)  
+- **CDN:** Azure Content Delivery Network for global distribution  
+- **SSL:** Automatic HTTPS certificate provisioning  
+- **CI/CD:** GitHub Actions workflow for automatic deployment on push
 
-Create an Azure Static Web App in the Azure Portal
-Connect to GitHub repository
-Configure build settings:
+### 🚀 Deployment Steps
 
-App location: /
-API location: (leave empty)
-Output location: dist
+1. Create an Azure Static Web App in the Azure Portal
+2. Connect it to your GitHub repository
+3. Configure build settings:
+   - **App location:** `/`
+   - **API location:** *(leave empty)*
+   - **Output location:** `dist`
+4. Azure automatically creates a GitHub Actions workflow
+5. Every push to the `main` branch triggers automatic deployment
 
+---
 
-Azure automatically creates GitHub Actions workflow
-Every push to main branch triggers automatic deployment
+## 📊 API Integration
 
-📊 API Integration
-NASA FIRMS API
+### NASA FIRMS API
 
-Endpoint: https://firms.modaps.eosdis.nasa.gov/api/area/csv
-Provides satellite fire detection data
-Supports multiple satellites (MODIS, VIIRS)
-Returns CSV format data with fire locations and intensity
+- **Endpoint:** `https://firms.modaps.eosdis.nasa.gov/api/area/csv`  
+- Provides satellite fire detection data
+- Supports multiple satellites (MODIS, VIIRS)
+- Returns data in CSV format including fire locations and intensity
 
-NewsAPI
+### NewsAPI
 
-Endpoint: https://newsapi.org/v2/everything
-Searches for Ukraine-related news articles
-Supports keyword and date filtering
-Returns JSON format with article metadata
+- **Endpoint:** `https://newsapi.org/v2/everything`  
+- Searches for Ukraine-related news articles
+- Supports keyword and date filtering
+- Returns JSON-formatted article metadata
 
-🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request. For major changes, please open an issue first to discuss what you would like to change.
+---
 
-Fork the repository
-Create your feature branch (git checkout -b feature/AmazingFeature)
-Commit your changes (git commit -m 'Add some AmazingFeature')
-Push to the branch (git push origin feature/AmazingFeature)
-Open a Pull Request
+## 🤝 Contributing
 
-📄 Licence
-This project is licensed under the MIT License - see the LICENSE file for details.
-🙏 Acknowledgements
+Contributions are welcome! Please feel free to submit a Pull Request. For major changes, open an issue first to discuss what you'd like to change.
 
-NASA FIRMS for providing satellite fire detection data
-NewsAPI for news aggregation services
-JHUB Coding Scheme for the project opportunity
-Azure for cloud hosting services
-OpenStreetMap contributors for map data
+### 🔧 How to Contribute
 
-👤 Author
-Alex Orr
+```bash
+# Fork the repository
+# Create your feature branch
+git checkout -b feature/AmazingFeature
 
-GitHub: @ShabalalaWATP
-Project: Created as part of JHUB Module 9 - Cloud Deployment Challenge
+# Commit your changes
+git commit -m "Add some AmazingFeature"
 
-📝 Project Status
+# Push to your branch
+git push origin feature/AmazingFeature
+
+# Open a Pull Request
+```
+
+---
+
+## 📄 Licence
+
+This project is licensed under the **MIT License** – see the `LICENSE` file for details.
+
+---
+
+## 🙏 Acknowledgements
+
+- [NASA FIRMS](https://firms.modaps.eosdis.nasa.gov/) for satellite fire detection data  
+- [NewsAPI](https://newsapi.org/) for news aggregation  
+- **JHUB Coding Scheme** for the project opportunity  
+- [Azure](https://azure.microsoft.com/) for cloud hosting  
+- [OpenStreetMap](https://www.openstreetmap.org/) contributors for map data
+
+---
+
+## 👤 Author
+
+**Alex Orr**  
+GitHub: [@ShabalalaWATP](https://github.com/ShabalalaWATP)  
+Project created as part of **JHUB Module 9 – Cloud Deployment Challenge**
+
+---
+
+## 📝 Project Status
+
 This is my first cloud deployment project, demonstrating:
 
-API integration and data visualisation
-Responsive web design
-Cloud deployment workflows
-Real-world data application
+- API integration and data visualisation  
+- Responsive web design  
+- Cloud deployment workflows  
+- Real-world data application
 
-Future enhancements may include:
+### 🔮 Future Enhancements
 
-Additional data sources
-Historical data analysis
-Export functionality
-Mobile app version
+- Integrating additional data sources  
+- Enabling historical data analysis  
+- Export functionality (CSV/JSON)  
+- Mobile app version
