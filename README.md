@@ -8,8 +8,8 @@ A real-time web application that monitors and visualises potential conflict area
 
 ## 📸 Screenshots
 
-![alt text](image-2.png)
-![alt text](image-3.png)
+![image](https://github.com/user-attachments/assets/e7f33a30-b2a7-45e4-bac0-dc43496c06f0)
+![image](https://github.com/user-attachments/assets/9b874aa2-a8d5-4944-93b7-505551064f65)
 
 
 ## 🎯 Project Overview
