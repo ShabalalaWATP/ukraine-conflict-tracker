@@ -2,34 +2,35 @@
 const https = require('https');
 
 module.exports = async function (context, req) {
-    const firmsApiKey = process.env.FIRMS_API_KEY;
+    const newsApiKey = process.env.NEWS_API_KEY;
     
-    if (!firmsApiKey) {
+    if (!newsApiKey) {
         context.res = {
             status: 500,
-            body: { error: "FIRMS API key not configured" }
+            body: { error: "News API key not configured" }
         };
         return;
     }
     
     try {
-        const { area, dayRange = 1, date, satellite = 'VIIRS_SNPP_NRT' } = req.query;
+        const baseUrl = 'newsapi.org';
+        const endpoint = req.query.endpoint || 'everything';
         
-        if (!area) {
-            context.res = {
-                status: 400,
-                body: { error: "Area parameter is required" }
-            };
-            return;
-        }
+        // Build query parameters
+        const params = new URLSearchParams();
+        Object.keys(req.query).forEach(key => {
+            if (key !== 'endpoint') {
+                params.append(key, req.query[key]);
+            }
+        });
+        params.append('apiKey', newsApiKey);
         
-        // Build the path
-        const path = `/api/area/csv/${firmsApiKey}/${satellite}/${area}/${dayRange}${date ? `/${date}` : ''}`;
+        const path = `/v2/${endpoint}?${params.toString()}`;
         
         // Make HTTPS request
         const data = await new Promise((resolve, reject) => {
             https.get({
-                hostname: 'firms.modaps.eosdis.nasa.gov',
+                hostname: baseUrl,
                 path: path,
                 headers: {
                     'User-Agent': 'Azure-Functions'
@@ -46,14 +47,14 @@ module.exports = async function (context, req) {
         
         context.res = {
             status: data.status,
-            headers: { 'Content-Type': 'text/csv' },
+            headers: { 'Content-Type': 'application/json' },
             body: data.body
         };
     } catch (error) {
         context.log('Error:', error);
         context.res = {
             status: 500,
-            body: { error: "Failed to fetch FIRMS data", details: error.message }
+            body: { error: "Failed to fetch news", details: error.message }
         };
     }
 };
