@@ -31,7 +31,6 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
   - NASA FIRMS (Fire Information for Resource Management System)
   - NewsAPI for real-time news data
 - **Cloud Services:** Azure Static Web Apps
-- **CI/CD:** GitHub Actions for automatic deployment
 
 ## 📋 Features
 
