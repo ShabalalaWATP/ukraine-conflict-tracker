@@ -1,0 +1,205 @@
+/* components/NewsSearch/NewsSearch.css */
+.news-search {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.news-search h3 {
+  margin: 0 0 20px;
+  color: var(--text-primary);
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-mode-tabs {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.search-mode-tabs button {
+  flex: 1;
+  padding: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.search-mode-tabs button:hover {
+  background: var(--hover-color);
+}
+
+.search-mode-tabs button.active {
+  background: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.predefined-searches {
+  margin-bottom: 20px;
+}
+
+.predefined-searches label {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.search-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.preset-button {
+  padding: 8px 16px;
+  background: rgba(255, 213, 0, 0.1);
+  border: 1px solid var(--secondary-color);
+  color: var(--secondary-color);
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.preset-button:hover {
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+}
+
+.current-keywords label,
+.custom-search label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.current-keywords textarea,
+.custom-search input {
+  width: 100%;
+  padding: 12px;
+  background: var(--dark-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 8px;
+  font-family: inherit;
+  resize: vertical;
+}
+
+.current-keywords small,
+.custom-search small {
+  display: block;
+  margin-top: 5px;
+  color: var(--text-secondary);
+  font-size: 12px;
+}
+
+.date-section {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border-color);
+}
+
+.date-section h4 {
+  margin: 0 0 16px;
+  color: var(--text-primary);
+  font-size: 16px;
+}
+
+.date-quick-select {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.date-quick-select button {
+  flex: 1;
+  padding: 8px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.date-quick-select button:hover {
+  background: var(--hover-color);
+}
+
+.date-quick-select button.active {
+  background: var(--secondary-color);
+  color: var(--dark-bg);
+  border-color: var(--secondary-color);
+}
+
+.date-inputs {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.date-input-group label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.date-input-group input {
+  width: 100%;
+  padding: 8px 12px;
+  background: var(--dark-bg);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.search-button {
+  width: 100%;
+  padding: 14px;
+  margin-top: 20px;
+  background: var(--gradient-primary);
+  border: none;
+  color: white;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.search-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 91, 187, 0.4);
+}
+
+@media (max-width: 768px) {
+  .date-inputs {
+    grid-template-columns: 1fr;
+  }
+  
+  .search-buttons {
+    flex-direction: column;
+  }
+  
+  .preset-button {
+    width: 100%;
+  }
+}
