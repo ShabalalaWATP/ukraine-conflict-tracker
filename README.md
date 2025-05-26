@@ -24,13 +24,20 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
 
 ## 🛠️ Technologies Used
 
-- **Frontend:** React.js with Vite
-- **Mapping:** Leaflet & React-Leaflet
-- **Styling:** Custom CSS with Ukrainian flag colour scheme
-- **APIs:** 
-  - NASA FIRMS (Fire Information for Resource Management System)
-  - NewsAPI for real-time news data
-- **Cloud Services:** Azure Static Web Apps
+### Frontend
+- React.js with Vite
+- **Leaflet & React-Leaflet** - Interactive mapping
+- **CSS3** - Custom styling with Ukrainian flag colour scheme
+
+### Backend & APIs
+- **Azure Functions** - Serverless API proxy for secure key management
+- **NASA FIRMS API** - Satellite fire detection data
+- **NewsAPI** - Real-time news aggregation
+
+### Cloud Infrastructure
+- **Azure Static Web Apps** - Hosting and serverless functions
+- **GitHub Actions** - CI/CD pipeline for automated deployment
+- **Azure CDN** - Global content delivery
 
 ## 📋 Features
 
