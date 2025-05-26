@@ -29,6 +29,7 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
 - **CSS3** - Custom styling with Ukrainian flag colour scheme
 
 ### Backend & APIs
+- Node.js
 - **Azure Functions** - Serverless API proxy for secure key management
 - **NASA FIRMS API** - Satellite fire detection data
 - **NewsAPI** - Real-time news aggregation
