@@ -121,10 +121,10 @@ This application is deployed using **Azure Static Web Apps** with the following 
 ### 🚀 Deployment Steps
 
 #### Step 1: Fork this repository
-   - **1. Go to [https:](https://github.com/ShabalalaWATP/ukraine-conflict-tracker/)
-   - **2. Click the fork button (top right corner)
-   - **3. Select you're own GitHub account as the destination
-   - **4. Wait for GitHub to create your copy
+   1. Go to [https:](https://github.com/ShabalalaWATP/ukraine-conflict-tracker/)
+   2. Click the fork button (top right corner)
+   3. Select you're own GitHub account as the destination
+   4. Wait for GitHub to create your copy
 #### Step 2: Create an Azure Static Web App 
    - **1. Go to Azure Portal
    - **2. Click "+ Create a resource"
