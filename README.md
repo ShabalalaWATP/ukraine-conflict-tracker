@@ -122,11 +122,16 @@ This application is deployed using **Azure Static Web Apps** with the following 
 1. Create an Azure Static Web App in the Azure Portal
 2. Connect it to your GitHub repository
 3. Configure build settings:
+   - **Build presets: React
    - **App location:** `/`
-   - **API location:** *(leave empty)*
+   - **API location:** `api`
    - **Output location:** `dist`
-4. Azure automatically creates a GitHub Actions workflow
-5. Every push to the `main` branch triggers automatic deployment
+4. Configure API Keys in Azure
+   - **In Azure Portal → Your Static Web App → Configuration → Application settings**
+   - **Add These environmental variables = "NEWS_API_KEY - Your News API Key" "FIRMS_API_KEY - Your FIRMS API Key"
+5. 
+6. Azure automatically creates a GitHub Actions workflow
+7. Every push to the `main` branch triggers automatic deployment
 
 ---
 
