@@ -4,7 +4,7 @@ A real-time web application that monitors and visualises potential conflict area
 
 ## 🚀 Live Demo
 
-[View Live Application](https://ukraine-conflict-tracker.azurestaticapps.net) *(Azure deployment pending)*
+[[View Live Application](https://ukraine-conflict-tracker.azurestaticapps.net) *(Azure deployment pending)*](https://gentle-ground-0a21d8503.6.azurestaticapps.net/)
 
 ## 📸 Screenshots
 
