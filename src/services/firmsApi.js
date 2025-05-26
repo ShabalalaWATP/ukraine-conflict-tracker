@@ -4,9 +4,13 @@ import { format, subDays } from 'date-fns'
 const NASA_FIRMS_API_KEY = import.meta.env.VITE_NASA_FIRMS_API_KEY
 const FIRMS_BASE_URL = 'https://firms.modaps.eosdis.nasa.gov/api/area/csv'
 
+// Determine if we're in production (Azure) or development (local)
+const isProduction = import.meta.env.PROD
+
 export const fetchFireData = async (selectedDate) => {
   try {
     console.log('FIRMS API Key exists:', !!NASA_FIRMS_API_KEY)
+    console.log('Environment:', isProduction ? 'Production' : 'Development')
     
     // Use a wider date range to ensure we get some data
     const endDate = format(selectedDate, 'yyyy-MM-dd')
@@ -19,21 +23,47 @@ export const fetchFireData = async (selectedDate) => {
     const east = 40.3
     const west = 22.1
     
+    // Area parameter for FIRMS API
+    const area = `${west},${south},${east},${north}`
+    
     // Try both MODIS and VIIRS satellites
-    const urls = [
-      `${FIRMS_BASE_URL}/${NASA_FIRMS_API_KEY}/VIIRS_SNPP_NRT/${west},${south},${east},${north}/7/${startDate}`,
-      `${FIRMS_BASE_URL}/${NASA_FIRMS_API_KEY}/MODIS_NRT/${west},${south},${east},${north}/7/${startDate}`
-    ]
+    const satellites = ['VIIRS_SNPP_NRT', 'MODIS_NRT']
     
     let allFires = []
     
-    for (const url of urls) {
+    for (const satellite of satellites) {
       try {
-        console.log('Trying URL:', url.replace(NASA_FIRMS_API_KEY, 'API_KEY'))
-        const response = await axios.get(url)
+        console.log('Trying satellite:', satellite)
         
-        if (response.data && response.data.trim()) {
-          const lines = response.data.trim().split('\n')
+        let csvData
+        
+        if (isProduction) {
+          // In production, use the proxy
+          const queryParams = new URLSearchParams({
+            area: area,
+            dayRange: 7,
+            date: startDate,
+            satellite: satellite
+          })
+          
+          const response = await fetch(`/api/firms?${queryParams}`)
+          
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`)
+          }
+          
+          csvData = await response.text()
+        } else {
+          // In development, use direct API call
+          const url = `${FIRMS_BASE_URL}/${NASA_FIRMS_API_KEY}/${satellite}/${area}/7/${startDate}`
+          console.log('Trying URL:', url.replace(NASA_FIRMS_API_KEY, 'API_KEY'))
+          
+          const response = await axios.get(url)
+          csvData = response.data
+        }
+        
+        if (csvData && csvData.trim()) {
+          const lines = csvData.trim().split('\n')
           console.log('Response lines:', lines.length)
           
           if (lines.length > 1) {

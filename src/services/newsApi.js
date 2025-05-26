@@ -1,12 +1,14 @@
-import axios from 'axios'
-
 const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY
 const NEWS_BASE_URL = 'https://newsapi.org/v2/top-headlines'
 const EVERYTHING_URL = 'https://newsapi.org/v2/everything'
 
+// Determine if we're in production (Azure) or development (local)
+const isProduction = import.meta.env.PROD
+
 export const fetchNewsData = async (searchParams = {}) => {
   try {
     console.log('News API Key exists:', !!NEWS_API_KEY)
+    console.log('Environment:', isProduction ? 'Production' : 'Development')
     
     const {
       keywords = 'attack missile drone explosion killed death fire',
@@ -21,14 +23,11 @@ export const fetchNewsData = async (searchParams = {}) => {
     
     // Try top-headlines first for Ukraine
     try {
-      const response = await axios.get(NEWS_BASE_URL, {
-        params: {
-          country: 'ua',
-          apiKey: NEWS_API_KEY,
-          pageSize: 100
-        }
+      const response = await fetchNews('top-headlines', {
+        country: 'ua',
+        pageSize: 100
       })
-      allArticles = response.data.articles || []
+      allArticles = response.articles || []
     } catch (error) {
       console.log('Top headlines failed:', error.message)
     }
@@ -47,20 +46,17 @@ export const fetchNewsData = async (searchParams = {}) => {
     
     // Search with everything endpoint
     try {
-      const queryResponse = await axios.get(EVERYTHING_URL, {
-        params: {
-          q: query,
-          apiKey: NEWS_API_KEY,
-          language: 'en',
-          sortBy: 'publishedAt',
-          pageSize: 100,
-          from: fromDate,
-          to: toDate
-        }
+      const queryResponse = await fetchNews('everything', {
+        q: query,
+        language: 'en',
+        sortBy: 'publishedAt',
+        pageSize: 100,
+        from: fromDate,
+        to: toDate
       })
       
       // Combine articles from both sources
-      allArticles = [...allArticles, ...(queryResponse.data.articles || [])]
+      allArticles = [...allArticles, ...(queryResponse.articles || [])]
     } catch (error) {
       console.log('Everything endpoint failed:', error.message)
     }
@@ -150,6 +146,38 @@ export const fetchNewsData = async (searchParams = {}) => {
     
     // Return mock data based on search params
     return getMockNewsData(searchParams)
+  }
+}
+
+// Helper function to handle API calls
+async function fetchNews(endpoint, params) {
+  if (isProduction) {
+    // In production (Azure), use the proxy function
+    const queryParams = new URLSearchParams({
+      endpoint: endpoint,
+      ...params
+    })
+    
+    const response = await fetch(`/api/news?${queryParams}`)
+    
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`)
+    }
+    
+    return await response.json()
+  } else {
+    // In development, use axios with direct API call
+    const axios = (await import('axios')).default
+    const url = endpoint === 'top-headlines' ? NEWS_BASE_URL : EVERYTHING_URL
+    
+    const response = await axios.get(url, {
+      params: {
+        ...params,
+        apiKey: NEWS_API_KEY
+      }
+    })
+    
+    return response.data
   }
 }
 
