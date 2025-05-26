@@ -8,7 +8,8 @@ https://gentle-ground-0a21d8503.6.azurestaticapps.net/
 
 ## 📸 Screenshots
 
-
+![Screenshot 1](images/screenshot1.png)
+![Screenshot 2](images/screenshot2.png)
 
 ## 🎯 Project Overview
 
