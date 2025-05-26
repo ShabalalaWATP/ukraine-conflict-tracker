@@ -1,6 +1,6 @@
 # Ukraine Conflict Tracker
 
-A real-time web application that monitors and visualises potential conflict areas in Ukraine by tracking fire detections from NASA FIRMS satellite data and correlating them with explosion reports from news sources. This is my first project deployed to Azure Cloud Services.
+A real time web application that monitors and visualises potential conflict areas in Ukraine by tracking fire detections from NASA FIRMS satellite data and correlating them with explosion reports from news sources. This is my first project deployed to Azure Cloud Services.
 
 ## 🚀 Live Azure Deployment
 
@@ -16,7 +16,7 @@ https://gentle-ground-0a21d8503.6.azurestaticapps.net/
 This project was developed as part of **JHUB Module 9** to demonstrate cloud deployment capabilities and API integration. The application provides:
 
 - **Real-time satellite fire detection** data from NASA FIRMS
-- **Latest news monitoring** for conflict-related reports
+- **Latest news monitoring** for conflict related reports
 - **Interactive map visualisation** of fire detections across Ukraine
 - **Customisable news search** with date range filtering
 - **Responsive design** for all device sizes
@@ -42,11 +42,11 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
 ## 📋 Features
 
 ### Fire Detection Mapping
-- Interactive map showing satellite-detected fires
-- Colour-coded confidence levels (high/nominal)
+- Interactive map showing satellite detected fires
+- Colour coded confidence levels (high/nominal)
 - Click on markers for detailed information
 - Date selection to view historical data
-- Real-time fire count display
+- Real time fire count display
 
 ### News Integration
 - Customisable keyword search
@@ -182,9 +182,9 @@ This application is deployed using **Azure Static Web Apps** with the following 
 ### NewsAPI
 
 - **Endpoint:** `https://newsapi.org/v2/everything`  
-- Searches for Ukraine-related news articles
+- Searches for Ukraine related news articles
 - Supports keyword and date filtering
-- Returns JSON-formatted article metadata
+- Returns JSON formatted article metadata
 
 ---
 
@@ -230,7 +230,7 @@ This project is licensed under the **MIT License** – see the `LICENSE` file fo
 
 **Alex Orr**  
 GitHub: [@ShabalalaWATP](https://github.com/ShabalalaWATP)  
-Project created as part of **JHUB Module 9 – Cloud Deployment Challenge**
+Project created as part of **JHUB Module 9 – Cloud Computing: Challenge B**
 
 ---
 
