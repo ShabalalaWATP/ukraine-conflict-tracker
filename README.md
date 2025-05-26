@@ -2,9 +2,9 @@
 
 A real-time web application that monitors and visualises potential conflict areas in Ukraine by tracking fire detections from NASA FIRMS satellite data and correlating them with explosion reports from news sources. This is my first project deployed to Azure Cloud Services.
 
-## 🚀 Live Demo
+## 🚀 Live Azure Deployment
 
-[[View Live Application](https://ukraine-conflict-tracker.azurestaticapps.net) *(Azure deployment pending)*](https://gentle-ground-0a21d8503.6.azurestaticapps.net/)
+https://gentle-ground-0a21d8503.6.azurestaticapps.net/
 
 ## 📸 Screenshots
 
