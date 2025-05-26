@@ -146,7 +146,13 @@ This application is deployed using **Azure Static Web Apps** with the following 
    - **6. Api location: api
    - **7. Output location: dist
    - **8. Click: "Review + create" → "Create"
-#### Step 5: Add API Keys to Azure:
+#### Step 5: Wait for Azure to create workflow file:
+   - **1. Azure will automatically create a Pull Request in your GitHub repo
+   - **2. This adds a .github/workflows/azure-static-web-apps-xxxx.yml file
+   - **3. Check that this file contains: api_location: "api"
+   - **4. If it shows api_location: "" you must edit it to api_location: "api"
+   - **5. The Pull Request will auto-merge and trigger first deployment
+#### Step 6: Add API Keys to Azure:
    - **1. Wait for deployment to complete (2 minutes odd)
    - **2. Go to your new Static Web App in Azure Portal
    - **3. Navigate to Settings → Environment variables
@@ -155,7 +161,7 @@ This application is deployed using **Azure Static Web Apps** with the following 
    - **6. FIRMS_API_KEY = Your NASA FIRMS API Key
    - **7. Click: Save
    - **8. Click: "Review + create" → "Create"
-#### Step 6: Verify Deployment
+#### Step 7: Verify Deployment
    - **1. Go to your GitHub fork → Actions tab
    - **2. You should see a workflow running (triggered by Azure)
    - **3. Once it shows ✅ green checkmark, your app is live!
