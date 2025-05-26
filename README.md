@@ -65,25 +65,41 @@ This project was developed as part of **JHUB Module 9** to demonstrate cloud dep
 
 ### Installation
 
-1. Clone the repository:
+1. **Clone the repository:**
+
 ```bash
 git clone https://github.com/ShabalalaWATP/ukraine-conflict-tracker.git
 cd ukraine-conflict-tracker
+```
 
-Install dependencies:
+2. **Install dependencies:**
+
+```bash
 npm install
+```
 
-Create a .env file in the root directory:
+3. **Create a `.env` file in the root directory:**
+
+```env
 VITE_NASA_FIRMS_API_KEY=your_nasa_firms_api_key
 VITE_NEWS_API_KEY=your_newsapi_key
+```
 
-Start the development server:
+4. **Start the development server:**
+
+```bash
 npm run dev
+```
 
-Open http://localhost:5173 in your browser
+5. **Open the app:**
 
-Building for Production
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+6. **Build for production:**
+
+```bash
 npm run build
+```
 
 🌐 Azure Deployment
 This application is deployed using Azure Static Web Apps with the following architecture:
