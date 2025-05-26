@@ -121,52 +121,52 @@ This application is deployed using **Azure Static Web Apps** with the following 
 ### 🚀 Deployment Steps
 
 #### Step 1: Fork this repository
-   1. Go to [https:](https://github.com/ShabalalaWATP/ukraine-conflict-tracker/)
-   2. Click the fork button (top right corner)
-   3. Select you're own GitHub account as the destination
-   4. Wait for GitHub to create your copy
+   1.  Go to https://github.com/ShabalalaWATP/ukraine-conflict-tracker
+   2.  Click the fork button (top right corner)
+   3.  Select you're own GitHub account as the destination
+   4.  Wait for GitHub to create your copy
 #### Step 2: Create an Azure Static Web App 
-   - **1. Go to Azure Portal
-   - **2. Click "+ Create a resource"
-   - **3. Search for "Static Web App" → Click "Create"
+   1.  Go to Azure Portal
+   2.  Click "+ Create a resource"
+   3.  Search for "Static Web App" → Click "Create"
 #### Step 3: Fill in the configuration steps:
-   - **1. Subscription: Your Azure subscription
-   - **2. Resource Group: Create new or select exisiting
-   - **3. Name: Choose a unique name (e.g., "your-ukraine-tracker")
-   - **4. Plan Type: Free
-   - **5. Region: Select closest to you
-   - **6. Source: GitHub
-   - **7. Click: "Sign in with GitHub" and authorise Azure
+   1.  Subscription: Your Azure subscription
+   2.  Resource Group: Create new or select exisiting
+   3.  Name: Choose a unique name (e.g., "your-ukraine-tracker")
+   4.  Plan Type: Free
+   5.  Region: Select closest to you
+   6.  Source: GitHub
+   7.  Click: "Sign in with GitHub" and authorise Azure
 #### Step 4: Configure build settings:
-   - **1. Organisation: Your GitHub username
-   - **2. Repository: ukraine-conflict-tracker (YOUR fork not mine)
-   - **3. Branch: main
-   - **4. Build preset: React
-   - **5. App location: /
-   - **6. Api location: api
-   - **7. Output location: dist
-   - **8. Click: "Review + create" → "Create"
+   1.  Organisation: Your GitHub username
+   2.  Repository: ukraine-conflict-tracker (YOUR fork not mine)
+   3.  Branch: main
+   4.  Build preset: React
+   5.  App location: /
+   6.  Api location: api
+   7.  Output location: dist
+   8.  Click: "Review + create" → "Create"
 #### Step 5: Wait for Azure to create workflow file:
-   - **1. Azure will automatically create a Pull Request in your GitHub repo
-   - **2. This adds a .github/workflows/azure-static-web-apps-xxxx.yml file
-   - **3. Check that this file contains: api_location: "api"
-   - **4. If it shows api_location: "" you must edit it to api_location: "api"
-   - **5. The Pull Request will auto-merge and trigger first deployment
+   1.  Azure will automatically create a Pull Request in your GitHub repo
+   2.  This adds a .github/workflows/azure-static-web-apps-xxxx.yml file
+   3.  Check that this file contains: api_location: "api"
+   4.  If it shows api_location: "" you must edit it to api_location: "api"
+   5.  The Pull Request will auto-merge and trigger first deployment
 #### Step 6: Add API Keys to Azure:
-   - **1. Wait for deployment to complete (2 minutes odd)
-   - **2. Go to your new Static Web App in Azure Portal
-   - **3. Navigate to Settings → Environment variables
-   - **4. Click: Add application setting and add these exactly: 
-   - **5. NEWS_API_KEY = Your NewsAPIKey
-   - **6. FIRMS_API_KEY = Your NASA FIRMS API Key
-   - **7. Click: Save
-   - **8. Click: "Review + create" → "Create"
+   1.  Wait for deployment to complete (2 minutes odd)
+   2.  Go to your new Static Web App in Azure Portal
+   3.  Navigate to Settings → Environment variables
+   4.  Click: Add application setting and add these exactly: 
+   5.  NEWS_API_KEY = Your NewsAPIKey
+   6.  FIRMS_API_KEY = Your NASA FIRMS API Key
+   7.  Click: Save
+   8.  Click: "Review + create" → "Create"
 #### Step 7: Verify Deployment
-   - **1. Go to your GitHub fork → Actions tab
-   - **2. You should see a workflow running (triggered by Azure)
-   - **3. Once it shows ✅ green checkmark, your app is live!
-   - **4. Find your URL in Azure Portal → Your Static Web App → Overview → URLv 
-   - **5. Visit your site: https://[your-app-name].azurestaticapps.net
+   1.  Go to your GitHub fork → Actions tab
+   2.  You should see a workflow running (triggered by Azure)
+   3.  Once it shows ✅ green checkmark, your app is live!
+   4.  Find your URL in Azure Portal → Your Static Web App → Overview → URLv 
+   5.  Visit your site: https://[your-app-name].azurestaticapps.net
 
 ---
 
